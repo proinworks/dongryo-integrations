@@ -1,0 +1,21 @@
+# Dongryo 플랫폼 플러그인 (Hermes Agent). Slack 봇처럼 Dongryo 대화를 Hermes 에 잇는다 (D-57).
+# 설치: hermes plugins install proinworks/dongryo-integrations/hermes/dongryo-dev --enable (공개 저장소, build.py 가 만든다, D-58)
+name: dongryo-dev
+label: Dongryo Dev
+kind: platform
+version: 0.1.0
+description: >
+  [개발용] Dongryo(팀 업무 공간)와 Slack 봇처럼 연결합니다. Dongryo 에서 이 에이전트에게 말을 걸면
+  Hermes 가 받아 처리하고, 답과 진행 상황이 Dongryo 에 실시간으로 올라갑니다.
+  추가 패키지가 필요 없습니다 (Hermes 기본 websockets 사용).
+author: Proinworks
+requires_env:
+  - name: DONGRYO_DEV_TOKEN
+    description: Dongryo 에서 받은 봇 토큰 (dr_bot_…). 회사 소유자·관리자가 에이전트마다 냅니다
+    prompt: Dongryo 봇 토큰
+    password: true
+    secret: true
+  - name: DONGRYO_DEV_URL
+    description: Dongryo 개발 환경 주소 (https://…). 관리자에게 받습니다
+    prompt: Dongryo 개발 환경 주소
+    password: false
